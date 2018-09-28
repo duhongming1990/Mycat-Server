@@ -10,9 +10,7 @@
         <table name="org" dataNode="localhost_user_center$1-3" autoIncrement="true" primaryKey="id"/>
     </schema>
 
-    <dataNode name="localhost_user_center1" dataHost="localhost" database="user_center1" />
-    <dataNode name="localhost_user_center2" dataHost="localhost" database="user_center2" />
-    <dataNode name="localhost_user_center3" dataHost="localhost" database="user_center3" />
+    <dataNode name="localhost_user_center$1-3" dataHost="localhost" database="user_center$1-3" />
 
     <dataHost name="localhost" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
