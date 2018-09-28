@@ -222,7 +222,7 @@ public class ServerConnection extends FrontendConnection {
 					schema = schemaConfig;
 			}
 		}
-
+		// 路由到后端数据库，执行 SQL
 		routeEndExecuteSQL(sql, type, schema);
 
 	}
@@ -287,6 +287,7 @@ public class ServerConnection extends FrontendConnection {
 			writeErrMessage(ErrorCode.ER_PARSE_ERROR, msg == null ? e.getClass().getSimpleName() : msg);
 			return;
 		}
+		// 执行 SQL
 		if (rrs != null) {
 			// session执行
 			session.execute(rrs, rrs.isSelectForUpdate()?ServerParse.UPDATE:type);

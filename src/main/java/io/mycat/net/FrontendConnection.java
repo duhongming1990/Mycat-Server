@@ -323,7 +323,11 @@ public abstract class FrontendConnection extends AbstractConnection {
 			writeErrMessage(ErrorCode.ER_UNKNOWN_COM_ERROR, "Query unsupported!");
 		}		
 	}
-	
+
+	/**
+	 * 将 二进制数组 解析成 SQL
+	 * @param data
+	 */
 	public void query(byte[] data) {
 		
 		// 取得语句
@@ -335,8 +339,8 @@ public abstract class FrontendConnection extends AbstractConnection {
 		} catch (UnsupportedEncodingException e) {
 			writeErrMessage(ErrorCode.ER_UNKNOWN_CHARACTER_SET, "Unknown charset '" + charset + "'");
 			return;
-		}		
-		
+		}
+		// 执行语句
 		this.query( sql );
 	}
 
